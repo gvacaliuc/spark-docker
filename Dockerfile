@@ -122,4 +122,8 @@ ENV SPARK_HOME=/usr/local/spark \
     SPARK_OPTS="--driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=info"
 ENV PATH=$SPARK_HOME/bin:$PATH
 
-WORKDIR $HOME/work
+#   Set the working directory to be the users home directory
+WORKDIR $HOME
+
+#   Launch into bash by default
+CMD ["/bin/bash"]
