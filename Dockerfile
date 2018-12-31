@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:latest
+FROM jupyter/minimal-notebook:latest
 MAINTAINER Gabriel Vacaliuc "gabe.vacaliuc@gmail.com"
 
 #   Switch back to root to install java and spark
@@ -20,6 +20,7 @@ RUN conda install --yes \
     'scipy' \
     'scikit-learn' \
     'pyspark' \
+    'matplotlib' \
     && conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
     fix-permissions $HOME
